@@ -7,8 +7,8 @@
     pageEncoding="UTF-8"%>
 <%
 // 로그인 페이지에서 사용자가 입력한 회원 정보 받기
-String userId = request.getParameter("inputId");
-String userPwd = request.getParameter("inputPassword");
+String userId = request.getParameter("id");
+String userPwd = request.getParameter("pass");
 
 // JDBC를 통해 오라클 접속
 MembershipDAO dao = new MembershipDAO();
@@ -19,6 +19,7 @@ dao.close();
 
 // 회원인증(로그인)에 성공한 경우
 if(membershipDTO.getId() != null) {
+	
 	/*
 	Session 영역에 아이디와 이름을 저장한다.
 	Session 영역은 페이지를 이동하더라도 웹 브라우저를 닫을 때까지 영역이 공유되어 접근할 수 있다.

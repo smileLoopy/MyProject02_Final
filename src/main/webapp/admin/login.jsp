@@ -1,5 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="utils.CookieManager"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+//loginId 라는 이름의 쿠키를 읽어온다.
+String loginId = CookieManager.readCookie(request, "loginId");
+
+//앞에서 읽어온 쿠키값이 있다면 checked 속성값을 변수에 설정한다.
+String cookieCheck = "";
+if(!loginId.equals("")){
+	cookieCheck = "checked";
+}
+%>
 <!DOCTYPE html> 
 <html lang="en">
     <head>
@@ -47,12 +60,16 @@
                                     		<!-- Form 태그 -->
                                         <form name="loginFrm" method="post" action="../member/login.do" onsubmit="return loginValidate(this);">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="Id"  name="id" type="text" placeholder="name@example.com" />
+                                                <input class="form-control" id="id"  name="id" type="text" placeholder="name@example.com" value="<%=loginId %>" />
                                                 <label for="inputEmail">Id</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" name="pass" type="password" placeholder="Password" />
+                                                <input class="form-control" id="pass" name="pass" type="password" placeholder="Password" />
                                                 <label for="inputPassword">Password</label>
+                                            </div>
+                                            <div class="form-check mb-3">
+                                                <input class="form-check-input" id="save_check" name="save_check"type="checkbox" value="Y" <%= cookieCheck %> />
+                                                <label class="form-check-label" for="save_check">Remember ID</label>
                                             </div>
                                             <div class="form-check mb-3">
                                                 <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
