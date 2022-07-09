@@ -25,22 +25,13 @@
 	<!-- jQuery and Modernizr-->
 	<script src="js/jquery-2.1.1.js"></script>
 	<script src="js/modernizr.custom.97074.js"></script>
-
-	
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="js/html5shiv.js"></script>
-        <script src="js/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body class="sub-page">
-	<!-- 헤더 인클루드 -->
+	<!-- header include-->
 	<header class="sub-header">
 	<jsp:include page="header.jsp"/>
 	</header>
-	<!-- Header -->
 
 	<!-- /////////////////////////////////////////Content -->
 	<div id="page-content">

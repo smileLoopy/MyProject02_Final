@@ -46,12 +46,6 @@ if (cookies != null) {
 		<!-- jQuery and Modernizr-->
 		<script src="js/jquery-2.1.1.js"></script>
 		
-		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		    <script src="js/html5shiv.js"></script>
-		    <script src="js/respond.min.js"></script>
-		<![endif]-->
 
 <style>
     div#popup{
@@ -153,8 +147,6 @@ $(function() {
 						</div><!-- /header-text -->
 					</div>
 					<div class="col-md-7 pull-right">
-						<!-- 서양 아저씨 사진  -->
-						<!-- <img style="margin-top: 60px;" src="images/header-man.png" class="img-responsive" alt=""> -->
 					</div>
 				</div>
 			</div>

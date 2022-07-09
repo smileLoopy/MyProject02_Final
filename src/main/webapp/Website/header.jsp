@@ -1,23 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
+
 <!-- 폰트어썸 cdn -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 <!-- Website css  -->
 <!-- Bootstrap Core CSS -->
-<link href="<%=request.getContextPath()%>/Website/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath()%>/Website/css/bootstrap.min.css"
+	rel="stylesheet" type="text/css">
 
 <!-- Custom CSS -->
-<link href="<%=request.getContextPath()%>/Website/css/style.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/Website/css/style.css"
+	rel="stylesheet">
 <link rel="stylesheet" href="fonts/stylesheet.css">
 <link href="css/mb-comingsoon-iceberg.css" rel="stylesheet" />
 <!-- Custom Fonts -->
-<link href="<%=request.getContextPath()%>/Website/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link
+	href="<%=request.getContextPath()%>/Website/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
 <!-- jQuery and Modernizr-->
 <script src="<%=request.getContextPath()%>/Website/js/jquery-2.1.1.js"></script>
-<!-- 이거 파일에 없는데? -->
-<script src="<%=request.getContextPath()%>/Website/js/modernizr.custom.97074.js"></script>
+<script
+	src="<%=request.getContextPath()%>/Website/js/modernizr.custom.97074.js"></script>
+	
 <!-- 헤더 시작 -->
 <!-- <header class="sub-header">  이 부분은 페이지마다 삽입한다.-->
 <!-- /////////////////////////////////////////Navigation -->
@@ -39,7 +46,7 @@
 						<img src="images/logoBlack.png" alt="" width="55 height="
 						45" style="font-weight: bold;" /> Wonderful Indonesia
 					</a>
-					
+
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse"
@@ -65,8 +72,8 @@
 							class="nav-link dropdown-toggle" href="#" id="userDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false"> <span
-								class="mr-2 d-none d-lg-inline text-gray-600 ">Login & Logout</span>
-								<img class="img-profile rounded-circle"
+								class="mr-2 d-none d-lg-inline text-gray-600 ">Login &
+									Logout</span> <img class="img-profile rounded-circle"
 								src="images/indonesia.png" width="25" height="20">
 						</a> <!-- Dropdown - User Information -->
 							<div
@@ -92,8 +99,6 @@
 								<%
 								}
 								%>
-
-
 								<!-- 만약 세션에 저장된 아이디가 없다면... -->
 								<%
 								} else {
@@ -115,7 +120,3 @@
 	</div>
 	<!-- /.container-fluid -->
 </nav>
-<!-- Navigation -->
-<!-- 헤더끝  -->
-<!-- 이부분에 다른 header 코드들 들어가있음. 각 페이지 마다 다름. -->
-<!-- </header> -->

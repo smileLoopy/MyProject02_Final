@@ -38,18 +38,6 @@ dao.close();
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- JSP 배우기 전 Javascript에서 쓰는 코드 -->
-<!-- <script>
-// 주소창의 URL을 얻어와서 파라미터로 전달된 id를 브라우저에 출력한다.
-window.onload = function(){
-  var url = location.href;
-  console.log(url);
-  var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
-  console.log(parameters[0]); 
-  returnValue = parameters[0].split('=')[1];
-  document.getElementById('id').value = returnValue;
-}
-</script> -->
 
 <script>
 function Use_Id(){
@@ -154,7 +142,6 @@ if(result==true){
 	</div>
 	<div class="container-fluid text-center" style="margin-top: 100px; background-color: #F2F5FA; padding-top: 10px; padding-bottom: 10px; border-top: 1px solid #cccccc; position: absolute; bottom: 0;">
 		<button class="btn" type="button" onclick="Use_Id();" style="background-color: #4A566C; color: white; width: 120px;">사용하기</button>
-		<!-- <input class="btn" type="button" onclick="javascript:Use_Id();"  style="background-color: #4A566C; color: white; width: 120px;"  value="사용하기2"> -->
 	</div>
 </form>
 

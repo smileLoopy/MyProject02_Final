@@ -13,9 +13,13 @@
 <title>Tables - SB Admin</title>
 
 <!-- admin css-->
-<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-<link href="<%=request.getContextPath()%>/admin/css/styles.css" rel="stylesheet" />
-<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
+	rel="stylesheet" />
+<link href="<%=request.getContextPath()%>/admin/css/styles.css"
+	rel="stylesheet" />
+<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
+	crossorigin="anonymous"></script>
 
 <!-- Website css => 문제점: Website 템플릿 까지 합치면 뭔가 겹침. => 그래서 페이징이 삐뚤어짐.
 	+) header쪽에 템플릿 절대경로 지정하고 이쪽 파일에서 경로 지정 안하면 또 안나옴.
@@ -38,22 +42,14 @@
 </head>
 
 <body class="sb-nav-fixed">
-	<!-- include header website file  -->
-	<%-- <div>
-	<header class="sub-header">
-	<jsp:include page="../Website/header.jsp"/>
-	</header> 
-	</div> --%>
 	<div id="layoutSidenav_content" style="margin-top: 30px">
 		<main>
 			<div class="container-fluid px-4">
-				<i class="fa-solid fa-circle-arrow-left fa-2x" 	onclick="window.history.go(-1); return false;" ></i>
-			 	<i class="fa-solid fa-house-chimney fa-2x" onclick="location.href='<%=request.getContextPath()%>/Website/index.jsp'"></i>
+				<i class="fa-solid fa-circle-arrow-left fa-2x"
+					onclick="window.history.go(-1); return false;"></i> <i
+					class="fa-solid fa-house-chimney fa-2x"
+					onclick="location.href='<%=request.getContextPath()%>/Website/index.jsp'"></i>
 				<h1 class="mt-4" style="color: black">Notice</h1>
-				<!-- <ol class="breadcrumb mb-4">
-                       <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                       <li class="breadcrumb-item active">Tables</li>
-                   </ol> -->
 				<div class="card mb-4">
 					<div class="card-body">
 						Notice<br> DataTables is a third party plugin that is used to

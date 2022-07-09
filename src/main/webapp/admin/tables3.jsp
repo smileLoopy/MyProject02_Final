@@ -13,29 +13,37 @@
 <title>Q&A 게시판</title>
 <style type="text/css">
 input[type=submit] {
-    padding:5px; 
-    border:2px solid #ccc; 
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
+	padding: 5px;
+	border: 2px solid #ccc;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
 }
-#btnWrite{
+
+#btnWrite {
 	margin-bottom: 15px;
 }
-
-
 </style>
 <!-- 폰트어썸 cdn -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 
 <!-- bootstrap cdn-->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- admin css-->
-<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-<link href="<%=request.getContextPath()%>/admin/css/styles.css" rel="stylesheet" />
-<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
+	rel="stylesheet" />
+<link href="<%=request.getContextPath()%>/admin/css/styles.css"
+	rel="stylesheet" />
+<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
+	crossorigin="anonymous"></script>
 
 <!-- Website css => 문제점: Website 템플릿 까지 합치면 뭔가 겹침. => 그래서 페이징이 삐뚤어짐.
 	+) header쪽에 템플릿 절대경로 지정하고 이쪽 파일에서 경로 지정 안하면 또 안나옴.
@@ -62,15 +70,12 @@ input[type=submit] {
 <body class="sb-nav-fixed">
 	<div id="layoutSidenav_content" style="margin-top: 30px">
 		<main>
-			<!-- include header website file  -->
-			<div class="container-fluid px-4" >
-				<i class="fa-solid fa-circle-arrow-left fa-2x" 	onclick="window.history.go(-1); return false;" ></i>
-			 	<i class="fa-solid fa-house-chimney fa-2x" onclick="location.href='<%=request.getContextPath()%>/Website/index.jsp'"></i>
+			<div class="container-fluid px-4">
+				<i class="fa-solid fa-circle-arrow-left fa-2x"
+					onclick="window.history.go(-1); return false;"></i> <i
+					class="fa-solid fa-house-chimney fa-2x"
+					onclick="location.href='<%=request.getContextPath()%>/Website/index.jsp'"></i>
 				<h1 class="mt-4" style="color: black">Q&A</h1>
-				<!-- <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Tables</li>
-                        </ol> -->
 				<div class="card mb-4">
 					<div class="card-body">
 						Q&A<br> DataTables is a third party plugin that is used to
@@ -128,7 +133,8 @@ input[type=submit] {
 						</table>
 					</div>
 				</div>
-				<button id="btnWrite" type="button" class="btn btn-outline-dark" onclick="location.href='../myboard/write2.do'">글쓰기</button>
+				<button id="btnWrite" type="button" class="btn btn-outline-dark"
+					onclick="location.href='../myboard/write2.do'">글쓰기</button>
 			</div>
 		</main>
 		<footer class="py-4 bg-light mt-auto">
@@ -143,13 +149,17 @@ input[type=submit] {
 			</div>
 		</footer>
 	</div>
-	
-	
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  <script src="<%=request.getContextPath()%>/admin/js/scripts.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-  <script src="<%=request.getContextPath()%>/admin/js/datatables-simple-demo.js"></script>
-  
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		crossorigin="anonymous"></script>
+	<script src="<%=request.getContextPath()%>/admin/js/scripts.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"
+		crossorigin="anonymous"></script>
+	<script
+		src="<%=request.getContextPath()%>/admin/js/datatables-simple-demo.js"></script>
+
 
 </body>
 </html>

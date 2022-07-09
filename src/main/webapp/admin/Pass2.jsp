@@ -35,8 +35,6 @@ View에서 확인할 수 있지만, EL을 이용하면 해당 과정없이 param
 잠깐 수정한 후 값이 제대로 입력되었는지 반드시 확인해야 한다.
 (hidden값이 잘 들어오는지 확인하려면 hidd-en 이런식으로 오타를 내서 확인해보기 or 소스보기 or F12으로 element에서 확인)
 -->
-<%-- <input type="hidden"  name="idx"	value="${param.idx }"/>
- --%>
 <input type="hidden"  name="idx"	value="${idx }"/>
 <!-- 아까 controller에서 request 영역에 set 했으니까 -->
 <input type="hidden"  name="mode"	value="${mode }"/>

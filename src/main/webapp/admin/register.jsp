@@ -196,7 +196,7 @@
 	} 
  */
 
-	//정우오빠 JS	유효성 검사
+	//스터디그룹 JS	유효성 검사
 	
    // submit 시 필수 입력 사항 입력 여부 확인
    function registValidate(form){

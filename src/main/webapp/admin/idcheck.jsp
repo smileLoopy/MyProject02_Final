@@ -1,11 +1,3 @@
-<%--
-/**
- * 1. 프로젝트명 : idcheck.jsp
- * 2. 작성일 : 2022. 6. 4. 오후 7:06:07
- * 3. 작성자 : mite88
- * 4. 설명 : id체크
- */
---%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>
 <%
