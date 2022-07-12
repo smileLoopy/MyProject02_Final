@@ -1,3 +1,6 @@
+<%@page import="java.math.BigInteger"%>
+<%@page import="java.net.URLEncoder"%>
+<%@page import="java.security.SecureRandom"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="utils.CookieManager"%>
@@ -76,80 +79,25 @@ if(!loginId.equals("")){
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="small" href="password.html">Forgot Password?</a>
-                                                <button type="button" class="btn btn-primary" id="naverIdLogin_loginButton" href="javascript:void(0)">Login</button>
+                                                <button type="submit" class="btn btn-primary" id="naverIdLogin_loginButton" href="javascript:void(0)">Login</button>
                                             </div>
                                         </form>
-                                        <!-- form태그 끝 -->
-                                        
-                                        
-                                        <!-- 네이버 로그인 (from태그 밖으로 넣어야함)  -->
                                         <br />
-                                        <ul>
-																				<li>
-																			      <!-- 아래와같이 아이디를 꼭 써준다. -->
-																			      <a id="naverIdLogin_loginButton" href="javascript:void(0)">
-																			          <span>네이버 로그인</span>
-																			      </a>
-																				</li>
-																				<li onclick="naverLogout(); return false;">
-																			      <a href="javascript:void(0)">
-																			          <span>네이버 로그아웃</span>
-																			      </a>
-																				</li>
-																				<input type="hidd-en"  id="naver_name"/>
-																			</ul>
-                                      <!-- 네이버 스크립트 -->
-																			<script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>  
-                                      <script>
-																			var naverLogin = new naver.LoginWithNaverId(
-																					{
-																						clientId: "HVVeCXQIB3ojtGVHzBGo", //내 애플리케이션 정보에 cliendId를 입력해줍니다.
-																						callbackUrl: "http://localhost:8082/MyProject02_Final/admin/login.jsp", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
-																						isPopup: false,
-																						callbackHandle: true
-																					}
-																				);	
-																			
-																			naverLogin.init();
-																			
-																			window.addEventListener('load', function () {
-																				naverLogin.getLoginStatus(function (status) {
-																					if (status) {
-																						var email = naverLogin.user.getEmail(); // 필수로 설정할것을 받아와 아래처럼 조건문을 줍니다.
-																			    		
-																						console.log(naverLogin.user);
-																						document.getElementById('naver_name').value = naverLogin.user.name;
-																			    		
-																			      if( email == undefined || email == null) {
-																							alert("이메일은 필수정보입니다. 정보제공을 동의해주세요.");
-																							naverLogin.reprompt();
-																							return;
-																						}
-																					} else {
-																						console.log("callback 처리에 실패하였습니다.");
-																					}
-																				});
-																			});
-																			
-																			
-																			var testPopUp;
-																			function openPopUp() {
-																			    testPopUp= window.open("https://nid.naver.com/nidlogin.logout", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,width=1,height=1");
-																			}
-																			function closePopUp(){
-																			    testPopUp.close();
-																			}
-																			
-																			function naverLogout() {
-																				openPopUp();
-																				setTimeout(function() {
-																					closePopUp();
-																					}, 1000);
-																				
-																				
-																			}
-																			</script> 
-                                        
+																          <%
+																             String clientId = "HVVeCXQIB3ojtGVHzBGo";//애플리케이션 클라이언트 아이디값";
+																             String redirectURI = URLEncoder.encode("http://localhost:8082/MyProject02_Final/member/login.do", "UTF-8");
+																             SecureRandom random = new SecureRandom();
+																             String state = new BigInteger(130, random).toString();
+																             String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code";
+																             apiURL += "&client_id=" + clientId;
+																             apiURL += "&redirect_uri=" + redirectURI;
+																             apiURL += "&state=" + state;
+																             session.setAttribute("state", state);
+																          %>
+														              <%-- <a href="<%=apiURL%>"><img height="50" src="http://static.nid.naver.com/oauth/small_g_in.PNG"/></a> --%>
+														               <a id="naverIdLogin_loginButton" href="<%=apiURL%>" style="width: 200px; height: 60px; background-color: green; border-radius: 30px; color: white; display: flex; align-items: center; justify-content: center; border: 0">
+														                 네이버 로그인
+														               </a>
                                     </div>
                                     <div class="card-footer text-center py-3">
                                     			

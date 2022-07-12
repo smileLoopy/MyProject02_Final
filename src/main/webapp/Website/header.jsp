@@ -42,7 +42,7 @@
 							class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand page-scroll"
-						href="http://localhost:8082/MariaMVCBoard/Website/index.jsp">
+						href="<%=request.getContextPath()%>/Website/index.jsp">
 						<img src="images/logoBlack.png" alt="" width="55 height="
 						45" style="font-weight: bold;" /> Wonderful Indonesia
 					</a>
@@ -54,19 +54,26 @@
 					<ul class="nav navbar-nav navbar-right"
 						style="position: relative; z-index: 999">
 						<li><a class="page-scroll"
-							href="http://localhost:8082/MariaMVCBoard/Website/index.jsp">Home</a>
+							href="./Website/index.jsp">Home</a>
 						</li>
 						<li><a class="page-scroll"
-							href="http://localhost:8082/MariaMVCBoard/Website/single.jsp">About
+							href="./Website/single.jsp">About
 								Us</a></li>
 						<li><a class="page-scroll"
-							href="http://localhost:8082/MariaMVCBoard/Website/archive.jsp">Blog</a>
+							href="http://localhost:8082/MyProject02_Final/Website/archive.jsp">Blog</a>
 						</li>
 						<li><a class="page-scroll" href="../mynotice/list_notice2.do">Notice</a>
 						</li>
 						<li><a class="page-scroll" href="../myboard/list2.do">Q&A</a>
 						</li>
 						<li><a class="page-scroll" href="contact.jsp">Contact</a></li>
+						<%
+						if(session.getAttribute("id") !=null){
+						%>
+						<li><a class="page-scroll" ><%=session.getAttribute("firstname") %>님</a></li>
+						<%
+						}
+						%>
 						<!-- Login & Logout -->
 						<li class="nav-item dropdown no-arrow"><a
 							class="nav-link dropdown-toggle" href="#" id="userDropdown"

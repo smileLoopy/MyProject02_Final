@@ -52,30 +52,6 @@ public class MembershipDAO extends DBConnPool{
 		MembershipDTO dto = new MembershipDTO(); // 객체생성
 		try {
 
-			if (pw.equals("")) {
-				// 아이디가 맞는지 확인용
-				String sql = "SELECT * FROM membership WHERE id = ?";
-
-				psmt = con.prepareStatement(sql);
-				psmt.setString(1, id);
-				rs = psmt.executeQuery();
-
-				// rs.next(); // 해당결과는 한행뿐이기 때문에 if문을 쓰지않음
-				if (rs.next()) {
-
-
-					//저장
-					dto.setIdx(rs.getString(1));
-					dto.setFirstname(rs.getString(2));
-					dto.setLastname(rs.getString(3));
-					dto.setId(rs.getString(4));
-					dto.setPass(rs.getString(5));
-					dto.setRegidate(rs.getDate(6));
-
-				}
-
-			} else {
-				// 아이디와 비번이 맞는지 확인용
 				String sql = "SELECT * FROM membership WHERE id = ? and pass = ?";
 
 				psmt = con.prepareStatement(sql);
@@ -93,9 +69,7 @@ public class MembershipDAO extends DBConnPool{
 					dto.setId(rs.getString(4));
 					dto.setPass(rs.getString(5));
 					dto.setRegidate(rs.getDate(6));
-
 				}
-			}
 
 		} catch (Exception e) {
 			System.out.println("로그인에러" + e.getMessage());
@@ -196,12 +170,12 @@ public class MembershipDAO extends DBConnPool{
 			
 			
 			if(rs.next()) {
-				System.out.println("아이디 중복 확인 중 오류 발생");
 				dto.setId(rs.getString("id"));
 			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("아이디 중복 확인 중 오류 발생");
 		}
 		return dto;
 	}
